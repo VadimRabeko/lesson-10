@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Raleway';
+  text-align: center;
+}
+
+body {
+  display: grid;
+  grid-template-areas:
+    'header'
+    'wrapper';
+  grid-template-rows: 1fr 2fr;
+  grid-template-columns: 1fr;
+  gap: 66px;
+}
+
+#header {
+  grid-area: header;
+}
+
+#section__buld {
+  grid-area: section__buld;
+}
+
+#section__keyboard {
+  grid-area: section__keyboard;
+}
+
+#section__lightning {
+  grid-area: section__lightning;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  width: 90%;
+  max-width: 435px;
+  margin-top: 102px;
+}
+
+.header__title {
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 36px;
+}
+
+.line {
+  width: 64px;
+  height: 2px;
+  margin: 22px auto;
+  background-color: rgba(255, 139, 56, 1);
+}
+
+.text {
+  font-size: 14px;
+  color: #86878b;
+}
+
+#wrapper {
+  grid-area: wrapper;
+  display: grid;
+  grid-template-areas: 'section__buld section__keyboard section__lightning';
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 33px;
+  justify-self: center;
+  width: 90%;
+  margin-bottom: 111px;
+}
+
+.section__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  max-width: 350px;
+}
+
+.content__image {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 27px;
+  border: 2px solid rgba(255, 139, 56, 1);
+  border-radius: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.image-buld {
+  background-image: url(images/buld.jpg);
+}
+
+.image-keyboard {
+  background-image: url(images/keyboard.jpg);
+}
+
+.image-lightning {
+  background-image: url(images/lightning.jpg);
+}
+
+.content__title {
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+@media (max-width: 575px) {
+  body {
+    gap: 50px;
+  }
+  #wrapper {
+    grid-template-areas:
+      'section__buld'
+      'section__keyboard'
+      'section__lightning';
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
